@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BEING mOTHER</title>
+<meta name="description" content="BEING mOTHER by Momomento: a contemporary circus piece about parenthood and art, with live music and a lot of clay. Linz, 28 and 29 November 2026.">
+<meta property="og:title" content="BEING mOTHER - Momomento">
+<meta property="og:description" content="Contemporary circus about parenthood and art. TRIBÜNE LINZ, 28 and 29 November 2026.">
+<meta property="og:image" content="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Gyoergy-Tamas_1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  /* Layout: dark stage, one strong photo, dates and tickets up front, then the piece, then a photo wall. */
+  :root {
+    --stage: #141110;
+    --wing: #1f1a18;
+    --chalk: #efe7df;
+    --dust: #a89a8f;
+    --clay: #c9734f;
+    --line: #3a322e;
+    --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --body: "Newsreader", Georgia, "Times New Roman", serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--stage);
+    color: var(--chalk);
+    font-family: var(--body);
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: var(--clay); }
+  a:focus-visible, .btn:focus-visible { outline: 2px solid var(--chalk); outline-offset: 3px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  header.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: 48px;
+    align-items: center;
+    padding: 56px 0 64px;
+  }
+  .hero-photo { border-radius: 4px; overflow: hidden; background: var(--wing); aspect-ratio: 1381 / 1900; }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .company { font-family: var(--display); font-weight: 500; letter-spacing: .14em; text-transform: uppercase; font-size: .8rem; color: var(--dust); margin: 0 0 12px; }
+  h1 {
+    font-family: var(--display); font-weight: 800;
+    font-size: clamp(3rem, 8vw, 6rem); line-height: .92; letter-spacing: -.02em;
+    margin: 0 0 20px; text-wrap: balance;
+  }
+  h1 .o { color: var(--clay); }
+  .lede { font-size: 1.35rem; line-height: 1.45; max-width: 32ch; margin: 0 0 32px; }
+
+  .dates { display: grid; gap: 12px; margin: 0 0 20px; }
+  .date {
+    display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center;
+    padding: 14px 16px; border: 1px solid var(--line); border-radius: 4px; background: var(--wing);
+  }
+  .date .day { font-family: var(--display); font-weight: 800; font-size: 2rem; line-height: 1; font-variant-numeric: tabular-nums; }
+  .date .meta { font-size: 1rem; line-height: 1.35; }
+  .date .meta span { color: var(--dust); display: block; font-size: .9rem; }
+  .btn {
+    display: inline-block; font-family: var(--display); font-weight: 500; font-size: .95rem;
+    text-decoration: none; padding: 10px 18px; border-radius: 999px;
+    background: var(--clay); color: var(--stage); white-space: nowrap;
+  }
+  .btn:hover { background: var(--chalk); }
+  .small { font-size: .95rem; color: var(--dust); margin: 0; }
+
+  .band { margin: 0 0 8px; border-radius: 4px; overflow: hidden; aspect-ratio: 21 / 9; background: var(--wing); }
+  .band img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 55%; }
+  @media (max-width: 600px) { .band { aspect-ratio: 4 / 3; } }
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  h2 { font-family: var(--display); font-weight: 800; font-size: 1.6rem; margin: 0 0 20px; letter-spacing: -.01em; }
+  .cols { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 48px; }
+  .prose p { max-width: 62ch; margin: 0 0 1em; }
+  dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 10px 20px; font-size: 1rem; }
+  dt { color: var(--dust); }
+  dd { margin: 0; }
+
+  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+  .gallery a { display: block; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 4px; background: var(--wing); }
+  .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+  .gallery a:hover img { transform: scale(1.03); }
+
+  .flyer { display: block; border-radius: 4px; overflow: hidden; }
+  .venue { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; }
+  .venue h3 { font-family: var(--display); font-weight: 500; font-size: 1.05rem; margin: 0 0 8px; }
+  .venue p { margin: 0 0 6px; font-size: 1rem; }
+
+  footer { padding: 32px 0 48px; border-top: 1px solid var(--line); font-size: .9rem; color: var(--dust); }
+  footer p { margin: 0 0 6px; }
+
+  @media (max-width: 820px) {
+    header.hero, .cols { grid-template-columns: 1fr; gap: 32px; }
+    header.hero { padding-top: 24px; }
+    .hero-photo { max-height: 70vh; aspect-ratio: auto; }
+  }
+  @media (max-width: 420px) {
+    .wrap { padding: 0 16px; }
+    .date { grid-template-columns: auto 1fr; }
+    .date .btn { grid-column: 1 / -1; text-align: center; }
+  }
+  @media (prefers-reduced-motion: reduce) { .gallery img { transition: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-photo">
+      <img src="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Gyoergy-Tamas_1-1381x1900.jpg"
+           alt="A performer from BEING mOTHER on stage" width="1381" height="1900">
+    </div>
+    <div>
+      <p class="company">Momomento (AT) &middot; Contemporary circus</p>
+      <h1>BEING m<span class="o">O</span>THER</h1>
+      <p class="lede">Can you raise a child and keep making your art? Two new mothers try to find out, with acrobatics, live music and a great deal of clay.</p>
+
+      <div class="dates" aria-label="Upcoming performances">
+        <div class="date">
+          <div class="day">28</div>
+          <div class="meta">Saturday 28 November 2026, 19:30<span>TRIBÜNE LINZ</span></div>
+          <a class="btn" href="https://reservation.ticketleo.com/event/36142/beingmother">Buy tickets</a>
+        </div>
+        <div class="date">
+          <div class="day">29</div>
+          <div class="meta">Sunday 29 November 2026, 17:00<span>TRIBÜNE LINZ</span></div>
+          <a class="btn" href="https://reservation.ticketleo.com/event/36142/beingmother">Buy tickets</a>
+        </div>
+      </div>
+      <p class="small">Tickets &euro;18 / &euro;16 / &euro;14 &middot; 60 minutes, no interval</p>
+    </div>
+  </header>
+
+  <figure class="band">
+    <img src="clay-hands.jpg" alt="Two hands holding large rounded lumps of raw clay" width="2000" height="1333">
+  </figure>
+
+  <section aria-labelledby="about">
+    <div class="cols">
+      <div class="prose">
+        <h2 id="about">About the piece</h2>
+        <p>Parenthood and artistic self-realisation: a balancing act. Two young mothers take stock of who they have become, with new identities, new perspectives and decisions they did not expect to have to make.</p>
+        <p>The deep joy of a new life sits right next to turbulence, anger and exhaustion, and the expectations and judgement of everyone watching. Through narrative circus, live music and thirty kilograms of clay, the piece asks how much room your own art can still claim when everything suddenly changes.</p>
+        <p>Ruth and Birgit know what they are talking about. Both are young mothers and artists: Ruth specialises in foot juggling and dance acrobatics, Birgit is a visual artist and musician. For BEING mOTHER they built a language of their own, where voice meets body and body meets clay, telling the journey into parenthood through juggling, physical theatre, sand projections and live music.</p>
+      </div>
+      <div>
+        <h2>Details</h2>
+        <dl>
+          <dt>Performance</dt><dd>Ruth Biller, Birgit Glocker</dd>
+          <dt>Midwife (direction)</dt><dd>Maria Sendlhofer</dd>
+          <dt>Genre</dt><dd>Narrative circus meets visual art and music</dd>
+          <dt>Company</dt><dd><a href="https://www.momomento.com">Momomento</a>, narrative circus art</dd>
+          <dt>Instagram</dt><dd><a href="https://www.instagram.com/cie_momomento/">@cie_momomento</a></dd>
+          <dt>Duration</dt><dd>60 minutes, no interval</dd>
+          <dt>Language</dt><dd>English and German</dd>
+          <dt>Please note</dt><dd>The show includes moments of complete darkness.</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="photos">
+    <h2 id="photos">Photos</h2>
+    <div class="gallery">
+      <a href="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_1-scaled.jpg"><img loading="lazy" src="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_1-scaled.jpg" alt="BEING mOTHER performance photo 1"></a>
+      <a href="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_2-scaled.jpg"><img loading="lazy" src="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_2-scaled.jpg" alt="BEING mOTHER performance photo 2"></a>
+      <a href="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_3-scaled.jpg"><img loading="lazy" src="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_3-scaled.jpg" alt="BEING mOTHER performance photo 3"></a>
+      <a href="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_4-scaled.jpg"><img loading="lazy" src="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_4-scaled.jpg" alt="BEING mOTHER performance photo 4"></a>
+      <a href="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_5-scaled.jpg"><img loading="lazy" src="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_5-scaled.jpg" alt="BEING mOTHER performance photo 5"></a>
+      <a href="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_6-scaled.jpg"><img loading="lazy" src="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_6-scaled.jpg" alt="BEING mOTHER performance photo 6"></a>
+      <a href="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_7-scaled.jpg"><img loading="lazy" src="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_7-scaled.jpg" alt="BEING mOTHER performance photo 7"></a>
+      <a href="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_8-scaled.jpg"><img loading="lazy" src="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_8-scaled.jpg" alt="BEING mOTHER performance photo 8"></a>
+      <a href="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_9-scaled.jpg"><img loading="lazy" src="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_9-scaled.jpg" alt="BEING mOTHER performance photo 9"></a>
+      <a href="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_10-scaled.jpg"><img loading="lazy" src="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_10-scaled.jpg" alt="BEING mOTHER performance photo 10"></a>
+      <a href="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_11-scaled.jpg"><img loading="lazy" src="https://theater-am-werk.at/wp-content/uploads/web_ON-THE-EDGE_BEING-mOTHER_c_Victoria-Nazarova_11-scaled.jpg" alt="BEING mOTHER performance photo 11"></a>
+    </div>
+  </section>
+
+  <section aria-labelledby="flyer">
+    <h2 id="flyer">Flyer</h2>
+    <a class="flyer" href="flyer.jpg"><img loading="lazy" src="flyer.jpg" alt="BEING mOTHER flyer (German): performers Ruth Biller and Birgit Glocker, dates in Vienna and Linz, ticket websites" width="2048" height="1453"></a>
+    <p class="small" style="margin-top:12px">Tap to open full size. Text in German.</p>
+  </section>
+
+  <section aria-labelledby="visit">
+    <h2 id="visit">Venue and tickets</h2>
+    <div class="venue">
+      <div>
+        <h3>TRIBÜNE LINZ Theater am Südbahnhofmarkt</h3>
+        <p>Eisenhandstraße 43, 4020 Linz</p>
+        <p><a href="https://www.google.com/maps/dir/?api=1&amp;destination=48.30292%2C14.29920&amp;travelmode=transit">Directions by public transport</a></p>
+        <p><a href="https://www.tribuene-linz.at/programm#being-mother">Venue programme page</a></p>
+      </div>
+      <div>
+        <h3>Buy online</h3>
+        <p><a href="https://reservation.ticketleo.com/event/36142/beingmother">Ticket reservation (ticketleo)</a></p>
+        <p>&euro;18 / &euro;16 / &euro;14</p>
+      </div>
+      <div>
+        <h3>Or book by phone or email</h3>
+        <p>Phone: +43 699 11399844</p>
+        <p>Email: <a href="mailto:karten@tribuene-linz.at">karten@tribuene-linz.at</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Premiered 10 November 2026 at Theater am Werk Petersplatz, Vienna. A Momomento production, co-produced with ON THE EDGE, supported by the Austrian Federal Ministry for Housing, Arts, Culture, Media and Sport. <a href="https://theater-am-werk.at/festivals/being-mother/">See the Theater am Werk page</a>.</p>
+    <p>Photos: Victoria Nazarova; header photo: Tamás György.</p>
+  </footer>
+
+</div>
+</body>
+</html>
